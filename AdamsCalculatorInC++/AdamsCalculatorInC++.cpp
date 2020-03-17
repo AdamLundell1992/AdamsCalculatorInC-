@@ -1,30 +1,81 @@
 #include <iostream>
-//Made by Developer Adam Jakob Lundell
-//Github AdamLundell1992
+#include <limits>
+//Adams Calculator 
+
+
 int main()
 {
 
-	char choice;
-	int num1, num2, result;
-	choice = '0';
-	std::cout << "wellcome to Adams Calculator Program " << std::endl;
+char choice;
+choice = 'k';
+int num1, num2, result;
+bool failNoNumber;
 
-	while (choice != 'e') {
-		std::cout << "To use Addition type ->: + " << std::endl;
-		std::cout << "To use Subtraction type ->: - " << std::endl;
-		std::cout << "To use Divided type ->: /" << std::endl;
-		std::cout << "To use Multiplication type ->: * " << std::endl;
-		std::cout << "To use Modulo type ->: % " << std::endl;
-		std::cout << "To exit program type ->: e " << std::endl;
-		std::cin >> choice;
-		std::cout << "You have chosen: " << choice << std::endl;
+
+
+std::cout << "wellcome to Adams Calculator Program " << std::endl;
+
+while (choice != 'e') {
+		
+std::cout << std::endl;
+std::cout << std::endl;
+std::cout << "Invalid input, try again: " << std::endl;
+std::cout << "To use Addition type ->: + " << std::endl;
+std::cout << "To use Subtraction type ->: - " << std::endl;
+std::cout << "To use Divided type ->: /" << std::endl;
+std::cout << "To use Multiplication type ->: * " << std::endl;
+std::cout << "To use Modulo type ->: % " << std::endl;
+std::cout << "Type in a Number: " << std::endl;
+
+
+
+
+
+		do {
+	std::cin >> num1;
+	failNoNumber = std::cin.fail();
+	if (failNoNumber) {
+	std::cout << "Invalid input, try again: " << std::endl;
+	std::cout << "Type in a Number: " << std::endl;
+	}
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	} while (failNoNumber == true);
+
+
+						while (true) {
+						std::cout << "Select one of the avaiable Operations : " << std::endl;
+						std::cin >> choice;
+						if (!(choice == '+' || choice == '-' || choice == '*' || choice == '/' || choice == '%' || choice == 'e')) {
+							std::cout << "Invalid input, try again: " << std::endl;
+
+						}
+						else
+						break;
+						}
+								do {
+
+								std::cout << "Type in a Second Number: " << std::endl;
+								std::cin >> num2;
+								failNoNumber = std::cin.fail();
+								if (failNoNumber) {
+									std::cout << "Invalid input, try again: " << std::endl;
+									std::cout << "Type in a Number: " << std::endl;
+								}
+								std::cin.clear();
+								std::cout << "Invalid input, try again: " << std::endl;
+								std::cout << "Type in a Second Number: " << std::endl;
+								std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+								} while (failNoNumber == true);
+		
+	
+			
+			
 		switch (choice) {
 		case '+':
 			system("cls");
-			std::cout << "Type in a Number: " << std::endl;
-			std::cin >> num1;
-			std::cout << " Type a second Operator to your calculation: " << std::endl;
-			std::cin >> num2;
+			std::cout << "You have selected the operation: " << choice << std::endl;	
 			result = num1 + num2;
 			std::cout << num1 << " + " << num2 << " = " << result << std::endl;
 			break;
@@ -33,10 +84,7 @@ int main()
 		switch (choice) {
 		case '-':
 			system("cls");
-			std::cout << "Type in a Number: " << std::endl;
-			std::cin >> num1;
-			std::cout << " Type a second Operator to your calculation: " << std::endl;
-			std::cin >> num2;
+			std::cout << "You have selected the operation: " << choice << std::endl;
 			result = num1 - num2;
 			std::cout << num1 << " - " << num2 << " = " << result << std::endl;
 			break;
@@ -44,10 +92,7 @@ int main()
 		switch (choice) {
 		case '/':
 			system("cls");
-			std::cout << "Type in a Number: " << std::endl;
-			std::cin >> num1;
-			std::cout << " Type a second Operator to your calculation: " << std::endl;
-			std::cin >> num2;
+			std::cout << "You have selected the operation: " << choice << std::endl;
 			result = num1 / num2;
 			std::cout << num1 << " / " << num2 << " = " << result << std::endl;
 			break;
@@ -55,10 +100,7 @@ int main()
 		switch (choice) {
 		case '*':
 			system("cls");
-			std::cout << "Type in a Number: " << std::endl;
-			std::cin >> num1;
-			std::cout << " Type a second Operator to your calculation: " << std::endl;
-			std::cin >> num2;
+			std::cout << "You have selected the operation: " << choice << std::endl;
 			result = num1 * num2;
 			std::cout << num1 << " * " << num2 << " = " << result << std::endl;
 			break;
@@ -66,18 +108,10 @@ int main()
 		switch (choice) {
 		case '%':
 			system("cls");
-			std::cout << "Type in a Number: " << std::endl;
-			std::cin >> num1;
-			std::cout << " Type a second Operator to your calculation: " << std::endl;
-			std::cin >> num2;
+			std::cout << "You have selected the operation: " << choice << std::endl;
 			result = num1 % num2;
 			std::cout << num1 << " % " << num2 << " = " << result << std::endl;
 			break;
-		}
-		if (choice == 'exit') {
-			break;
-		}
-	}
-	std::cout << "Calculator will now exit BYE BYE " << std::endl;
-	system("exit");
+		}	
+	}	
 }
